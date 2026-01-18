@@ -1,0 +1,14 @@
+# 作業系統相關
+.DS_Store
+Thumbs.db
+
+# 編輯器相關
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 其他
+node_modules/
+*.log
