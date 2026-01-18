@@ -535,76 +535,260 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    /* Container padding adjustment for mobile */
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Navigation - improved mobile layout */
+    header {
+        padding: 0.8rem 0;
+    }
+    
     nav {
-        flex-direction: column;
-    }
-    
-    .nav-logo {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    
-    .logo-image {
-        width: 30px;
-        height: 30px;
-    }
-    
-    nav h1 {
-        font-size: 1.2rem;
-        text-align: center;
-    }
-
-    .nav-right {
         flex-direction: column;
         gap: 1rem;
     }
-
+    
     nav ul {
-        margin-top: 1rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
     }
 
     nav ul li {
-        margin: 0 1rem;
-    }
-
-    .hero .main-title {
-        font-size: 2.5rem;
+        margin: 0.5rem;
     }
     
-    .hero .subtitle {
-        font-size: 1rem;
-    }
-
-    .hero h2 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-    }
-    
-    #countdown {
-        font-size: 2rem;
-    }
-    
-    #countdown span {
-        font-size: 3.5rem;
-    }
-    
-    .supporter-section {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .supporter-title {
-        font-size: 1.3rem;
-    }
-    
-    .supporter-icon {
-        width: 150px;
+    nav a {
+        font-size: 0.9rem;
     }
     
     .lang-toggle {
-        margin-top: 1rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    /* Hero Section - optimized for mobile */
+    section {
+        padding: 3rem 0;
+        min-height: auto;
+    }
+    
+    .hero {
+        margin-top: 100px;
+        padding: 2rem 0;
+    }
+
+    .hero .main-title {
+        font-size: 2rem;
+        letter-spacing: 0.05em;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+    
+    .hero .subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        white-space: normal;
+        line-height: 1.5;
+        padding: 0 10px;
+    }
+
+    /* Countdown - mobile friendly */
+    .countdown-container {
+        padding: 1.5rem 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    #countdown {
+        font-size: 1.2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.3rem;
+    }
+    
+    #countdown span {
+        font-size: 2.5rem;
+        margin: 0;
+    }
+    
+    #countdown .separator {
+        font-size: 2.5rem;
+        margin: 0 0.1rem;
+    }
+    
+    /* Supporter Section - stacked on mobile */
+    .supporter-section {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    
+    .supporter-title {
+        font-size: 1.2rem;
+    }
+    
+    .supporter-icon {
+        width: 120px;
+    }
+    
+    /* About Section - mobile optimization */
+    h2 {
+        font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .mission-statement {
+        padding: 1.5rem;
+        margin: 2rem 0;
+    }
+    
+    .mission-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .mission-highlight {
+        font-size: 1.3rem;
+        white-space: normal;
+        line-height: 1.6;
+    }
+    
+    /* Objective Cards - single column on mobile */
+    .objectives {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .objective-card {
+        padding: 1.5rem;
+    }
+    
+    .objective-card h4 {
+        font-size: 1.2rem;
+        white-space: normal;
+        line-height: 1.4;
+    }
+    
+    .objective-card p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    /* Guide Section - mobile friendly */
+    .guide-intro {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        padding: 0 10px;
+    }
+    
+    .guide-steps {
+        gap: 2rem;
+        padding: 0 10px;
+    }
+    
+    .step-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .step-number {
+        font-size: 1.8rem;
+        padding: 0.3rem 1rem;
+        top: -15px;
+        left: 15px;
+    }
+    
+    .step-card h3 {
+        font-size: 1.2rem;
+        margin-top: 2rem;
+    }
+    
+    .step-list li {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+    
+    /* Contact Section - mobile layout */
+    .contact-content {
+        padding: 1rem;
+    }
+    
+    .update-notice {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        padding: 0 10px;
+    }
+    
+    .contact-link-text {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .bastet-more {
+        margin-top: 2rem;
+        padding-top: 2rem;
+    }
+    
+    .bastet-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .bastet-links {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: stretch;
+    }
+    
+    .bastet-link {
+        font-size: 1.2rem;
+        padding: 1rem 1.5rem;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    /* Footer - mobile spacing */
+    footer {
+        padding: 1.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra small devices (phones in portrait) */
+@media (max-width: 480px) {
+    .hero .main-title {
+        font-size: 1.5rem;
+    }
+    
+    .hero .subtitle {
+        font-size: 0.8rem;
+    }
+    
+    #countdown span {
+        font-size: 2rem;
+    }
+    
+    #countdown .separator {
+        font-size: 2rem;
+    }
+    
+    .mission-highlight {
+        font-size: 1.1rem;
+    }
+    
+    .step-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .bastet-link {
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
     }
 }
