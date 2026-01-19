@@ -8,7 +8,20 @@ body {
     font-family: 'Courier New', Consolas, monospace;
     line-height: 1.6;
     color: #00ff00;
-    background: #0a0a0a;
+    background: #0a0a0a url('cat_first_page.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: -1;
 }
 
 .container {
@@ -30,6 +43,21 @@ header {
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
 }
 
+.cat-peek-decoration {
+    position: absolute;
+    top: -21px;
+    left: 20px;
+    z-index: 999;
+    pointer-events: none;
+}
+
+.cat-peek-decoration img {
+    width: 280px;
+    height: auto;
+    display: block;
+    filter: brightness(0.9) saturate(0.8) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -37,6 +65,29 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 1002;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.cat-peek-logo {
+    height: 60px;
+    width: auto;
+    border-radius: 50%;
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.cat-peek-logo:hover {
+    transform: scale(1.1) rotate(5deg);
+    border-color: #00ffff;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
 }
 
 .nav-right {
@@ -102,7 +153,7 @@ section:nth-child(even) {
 }
 
 .hero {
-    background: linear-gradient(135deg, #000000 0%, #1a1a2e 100%);
+    background: transparent;
     color: #00ff00;
     text-align: center;
     margin-top: 60px;
@@ -344,6 +395,53 @@ h2 {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+}
+
+/* Cat Paw Prints - Background Style */
+.cat-paw-print {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1.5s ease-out;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.cat-paw-print.visible {
+    opacity: 0.4;
+}
+
+.cat-paw-print img {
+    width: 120px;
+    height: auto;
+    filter: brightness(1.2) drop-shadow(0 0 15px rgba(0, 255, 0, 0.5));
+}
+
+.cat-paw-print.paw-1 {
+    left: -100px;
+    top: 0;
+}
+
+.cat-paw-print.paw-1 img {
+    transform: rotate(-25deg);
+}
+
+.cat-paw-print.paw-2 {
+    left: -100px;
+    top: 33%;
+}
+
+.cat-paw-print.paw-2 img {
+    transform: rotate(-25deg);
+}
+
+.cat-paw-print.paw-3 {
+    left: -100px;
+    top: 66%;
+}
+
+.cat-paw-print.paw-3 img {
+    transform: rotate(-25deg);
 }
 
 .step-card {
@@ -354,6 +452,7 @@ h2 {
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
     transition: all 0.3s ease;
     position: relative;
+    z-index: 1;
 }
 
 .step-card:hover {

@@ -76,3 +76,32 @@ window.addEventListener('scroll', () => {
         header.style.background = '#000';
     }
 });
+
+// 貓咪腳印滾動動畫
+function handlePawPrints() {
+    const pawPrints = document.querySelectorAll('.cat-paw-print');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                // 每個腳印出現時有不同的延遲，模擬貓咪走路
+                const pawNumber = entry.target.classList.contains('paw-1') ? 1 :
+                                 entry.target.classList.contains('paw-2') ? 2 : 3;
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, pawNumber * 400);
+            } else {
+                // 離開視野時移除 visible class，滾回來可以再次觸發
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '-50px'
+    });
+    
+    pawPrints.forEach(paw => observer.observe(paw));
+}
+
+// 頁面載入完成後初始化腳印動畫
+window.addEventListener('DOMContentLoaded', handlePawPrints);
