@@ -1,5 +1,5 @@
 // 語言切換
-let currentLang = 'zh';
+let currentLang = 'en';
 
 function switchLanguage() {
     currentLang = currentLang === 'zh' ? 'en' : 'zh';
@@ -44,6 +44,19 @@ function updateCountdown() {
         document.getElementById('countdown').innerHTML = finishedText;
     }
 }
+
+// 初始化頁面為英文
+window.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('[data-zh][data-en]');
+    elements.forEach(element => {
+        const text = element.getAttribute('data-en');
+        if (element.tagName === 'P' && element.id === 'countdown') {
+            return;
+        }
+        element.innerHTML = text;
+    });
+    document.getElementById('langToggle').textContent = '中';
+});
 
 // 初始執行
 updateCountdown();
