@@ -296,7 +296,7 @@ section:nth-child(even) {
 }
 
 .supporter-icon {
-    width: 200px;
+    width: 250px;
     height: auto;
     transition: all 0.3s ease;
     filter: brightness(1);
@@ -651,7 +651,7 @@ h2 {
 }
 
 .support-icon {
-    width: 200px;
+    width: 250px;
     height: auto;
     transition: all 0.3s ease;
     filter: brightness(1);
@@ -772,7 +772,8 @@ footer {
     }
     
     .supporter-icon {
-        width: 120px;
+        width: 500px;
+        max-width: 90vw;
     }
     
     /* About Section - mobile optimization */
